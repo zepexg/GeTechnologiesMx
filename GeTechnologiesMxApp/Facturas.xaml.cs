@@ -49,7 +49,7 @@ namespace GeTechnologiesMxApp
             {
                 Monto = decimal.Parse(txtMonto.Text),
                 PersonaId = _persona.Id,
-                Fecha = txtFecha.DisplayDate
+                Fecha = txtFecha.SelectedDate?.Date ?? new DateTime().Date
             };
             _service.guardaFactura(factura);
             clearControls();
