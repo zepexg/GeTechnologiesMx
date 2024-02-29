@@ -1,0 +1,46 @@
+﻿<Window x:Class="GeTechnologiesMxApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeTechnologiesMxApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="466" Width="915">
+    <Grid>
+        <DataGrid x:Name="ListaPersonas" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" RowDetailsVisibilityMode="Collapsed" Margin="20,40,458,40" RenderTransformOrigin="0.732,0.377">
+            <DataGrid.Columns>
+                <DataGridTextColumn Visibility="Hidden" Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nombre" IsReadOnly="True" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Apellido Paterno" IsReadOnly="True" Binding="{Binding ApellidoPaterno}"/>
+                <DataGridTextColumn Header="Apellido Materno" IsReadOnly="True" Binding="{Binding ApellidoMaterno}"/>
+                <DataGridTextColumn Header="Identificacion" IsReadOnly="True" Binding="{Binding Identificacion}"/>
+
+                <DataGridTemplateColumn Header="Borrar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="X" Content="X" Click="X_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Facturas">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnFacturas" Content="-" Click="btnFacturas_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Background="Beige" Margin="483,40,56,138">
+            <TextBox HorizontalAlignment="Left" Margin="212,25,0,0" TextWrapping="Wrap" x:Name="txtNombre" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="212,65,0,0" TextWrapping="Wrap" x:Name="txtAPaterno" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="212,105,0,0" TextWrapping="Wrap" x:Name="txtAMaterno" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="212,145,0,0" TextWrapping="Wrap" x:Name="txtIdentificacion" Text="" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Guardar" HorizontalAlignment="Left" Margin="115,199,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click"/>
+            <Label x:Name="lblNombre" Content="Nombres" Margin="35,25,201,180"/>
+            <Label x:Name="lblAPaterno" Content="Apellido Paterno" Margin="35,65,201,140"/>
+            <Label x:Name="lblAMaterno" Content="Apellido Materno" Margin="35,105,201,100"/>
+            <Label x:Name="lblIdentificacion" Content="Identificacion" Margin="35,145,201,60"/>
+        </Grid>
+    </Grid>
+</Window>

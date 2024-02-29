@@ -1,0 +1,27 @@
+﻿<Window x:Class="GeTechnologiesMxApp.Facturas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeTechnologiesMxApp"
+        mc:Ignorable="d"
+        Title="Facturas" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblPersona" Background="FloralWhite" Margin="10,10,10,400" FontSize="24"/>
+
+        <DataGrid x:Name="ListaFacturas" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" RowDetailsVisibilityMode="Collapsed" Margin="20,40,458,40" RenderTransformOrigin="0.732,0.377">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Monto" IsReadOnly="True" Binding="{Binding Monto}"/>
+                <DataGridTextColumn Header="Fecha" IsReadOnly="True" Binding="{Binding Fecha}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Background="Beige" Margin="380,40,33,153">
+            <TextBox HorizontalAlignment="Left" Margin="207,52,0,0" TextWrapping="Wrap" x:Name="txtMonto" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
+            <DatePicker HorizontalAlignment="Left" Margin="207,121,0,0" x:Name="txtFecha" Text="" VerticalAlignment="Top" Width="120" Height="36"/>
+            <Button Content="Guardar" HorizontalAlignment="Center" Margin="0,192,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click"/>
+            <Label x:Name="lblNombre" Content="Monto" Margin="35,52,201,130"/>
+            <Label x:Name="lblAPaterno" Content="Fecha" Margin="35,121,201,66"/>
+        </Grid>
+    </Grid>
+</Window>
